@@ -16,6 +16,7 @@ class ParseHTML extends React.Component{
       this.handleFontSizeChange = this.handleFontSizeChange.bind(this);
       this.handleImgWidthChange = this.handleImgWidthChange.bind(this);
       this.handleImgHeightChange = this.handleImgHeightChange.bind(this);
+      this.exitEdit = this.exitEdit.bind(this)
     }
 
     // componentDidMount(){
@@ -38,6 +39,7 @@ class ParseHTML extends React.Component{
       }
     
       function dragMouseDown(e) {
+        hideEdit()
         e = e || window.event;
         // e.preventDefault();
         // get the mouse cursor position at startup:
@@ -76,9 +78,17 @@ class ParseHTML extends React.Component{
       }
     
       function closeDragElement() {
+        hideEdit()
         // stop moving when mouse button is released:
         document.onmouseup = null;
         document.onmousemove = null;
+        
+      }
+
+      function hideEdit(){
+        if (document.getElementById('edit-tag-form')){
+          document.getElementById('edit-tag-form').parentNode.classList.toggle('hidden')
+        }
       }
     }
     
@@ -114,15 +124,14 @@ class ParseHTML extends React.Component{
   // }
   
   toggleEdit() {
-    this.setState({ editing: !this.state.editing })
+    this.setState({ editing: true })
     this.props.editingTag(this.props.index)
     let div = document.getElementById(`${this.props.index}`)
     this.dragElement(div)
   }
 
-  toggleDrag(){
-    let div = document.getElementById(`${this.props.index}`)
-    this.dragElement(div)
+  exitEdit(){
+    this.setState({ editing: false })
   }
   
   renderTag = () => {
@@ -205,7 +214,7 @@ class ParseHTML extends React.Component{
     let parentStyling = this.parseParentStyles();
     let editTag;
     if(this.state.editing){
-      editTag = <EditTag 
+      editTag = <EditTag
         tagObj={this.state.tagObj} 
         updateTag={this.props.updateTag}
         index={this.props.index}
@@ -215,6 +224,7 @@ class ParseHTML extends React.Component{
         handleImgWidthChange={this.handleImgWidthChange}
         handleImgHeightChange={this.handleImgHeightChange}
         deleteTag={this.props.deleteTag}
+        exitEdit={this.exitEdit}
       />
     }else{
       editTag = ""

@@ -4,15 +4,16 @@
     width: 100px;
     background-size: contain;
     position: absolute;
-    margin-top: calc(6% + 50px);
+    margin-top: calc(8vh + 50px);
     left: 4%;
     z-index: 5;
     transition: all .75s ease-in-out;
     top: 0;
+    border-radius: 500px;
 }
 
 .open {
-    height: 75%;
+    height: calc(80vh - 50px);
 }
 
 .open li {
@@ -45,7 +46,7 @@
     border-radius: 0px 0px 50px 50px;
     transition: all .75s ease-in-out;
     width: 100px;
-    margin-top: calc(6% + 100px);
+    margin-top: calc(8vh + 100px);
     position: absolute;
     left: 4%;
     top: 0;
@@ -142,7 +143,6 @@
     width: 100%;
 }
 .edit-tag-input{
-    margin: 5px;
     display: flex;
     justify-content: center;
 }
@@ -183,9 +183,8 @@
 
 #color-picker {
     transition: all .5s ease-in-out;
-    display: flex;
-    justify-content: center;
-    padding: 5% 0;
+    position: relative;
+    top: 26px;
 }
 
 
@@ -193,13 +192,8 @@
     cursor: pointer;
 }
 
-.circle-picker {
-    justify-content: center;
-    width: 252px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -14px;
-    margin-bottom: -14px;
+.compact-picker {
+    width: 200;
 }
 
 #huh{
@@ -254,7 +248,28 @@
     cursor: pointer;
 }
 
+.hidden{
+    display: none;
+}
 
+.show{
+    display: inherit;
+}
+
+#exit-button{
+    background: cornflowerblue;
+    font-size: 18px;
+    color: lightpink;
+    border: none;
+    border-radius: 4px;
+    padding: 7px;
+}
+
+#exit-button:hover {
+    color: rgb(192, 124, 134);
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
 
 @keyframes slideInFromRight {
     0% {

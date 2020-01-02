@@ -63,16 +63,14 @@ class CreateTag extends React.Component {
   //ui tag rotate
   pushButton() {
     let button = document.getElementById('add-tag-button');
+    let buttons = Array.from(document.getElementsByClassName('button'))
     let list = document.getElementById('create-tag-list')
     let east = document.getElementsByClassName('east-side')[0]
     let navButtons = document.getElementsByClassName('btn')
       button.classList.toggle('turned')
       list.classList.toggle('open')
       list.classList.toggle('closed')
-      east.classList.toggle('east-compact')
-      for (let i = 0; i < navButtons.length; i++) {
-        navButtons[i].classList.toggle('btn-bye')
-      }
+      buttons.forEach(button => button.classList.toggle('shadowy'))
     
   }
 
@@ -101,7 +99,7 @@ class CreateTag extends React.Component {
     // });
       return (
         <div id='dropdown-time'>
-          <div id='add-tag-button' onClick={this.pushButton}></div>
+          <div id='add-tag-button' className='button shadowy' onClick={this.pushButton}></div>
           <ul id='create-tag-list' className='closed'>
               <li><button value="p" onClick={(e) => this.handleClick(e)}>Add Text</button></li>
               <li id='file-upload-wrapper'><input id='file-upload' type="file" onChange={this.handleFileUpload} />Add Image</li>

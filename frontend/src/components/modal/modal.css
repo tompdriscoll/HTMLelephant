@@ -88,6 +88,11 @@
     width: 75%;
     align-self: center;
     cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+#modal-button:hover{
+    background: rgb(224, 147, 158);
 }
 
 #modal-signup-form {

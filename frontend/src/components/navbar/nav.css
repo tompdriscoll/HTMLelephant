@@ -9,6 +9,7 @@
     position: fixed;
     top: 0;
     z-index: 99;
+    box-shadow: 1px 1px 9px 2px #3f5f9a;
 }
 
 @keyframes slideInFromTop {
@@ -70,7 +71,6 @@
     width: 90px;
     background-size: contain;
     transition: all .75s;
-    cursor: pointer;
     margin-left: 15px;
 }
 
@@ -99,13 +99,13 @@
 }
 
 #nav-logo-ele:hover {
-   transform: rotate(20deg)
+   transform: rotate(20deg);
+   cursor: initial;
 }
 
 .btn{
-
     margin: 10px;
-    transition: all .25s ease-in-out;
+    transition: all .1s ease ;
 }
 
 /* strictly hypothetical */

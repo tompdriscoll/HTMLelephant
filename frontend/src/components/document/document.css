@@ -1,7 +1,7 @@
 #hello-there {
     margin-right: 4%;
     margin-top:  calc(8vh + 50px);;
-    height: 80%;
+    height: 80vh;
     background: aliceblue;
     margin-left: calc(8% + 100px);
     overflow: scroll;

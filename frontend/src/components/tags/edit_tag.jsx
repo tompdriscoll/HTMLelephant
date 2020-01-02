@@ -1,5 +1,5 @@
 import React from 'react';
-import { GithubPicker } from 'react-color';
+import { CompactPicker } from 'react-color';
 
 class EditTag extends React.Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class EditTag extends React.Component {
       let TE = '<Text Editor/>'
       if (this.state.type === 'img') {
         return (
-         <div> 
+         <div id='edit-tag-top'> 
           <div id='edit-tag-form'>
             <input
               type="range"
@@ -49,7 +49,7 @@ class EditTag extends React.Component {
           <div id='edit-tag-form'>
               <h1 id='edit-tag-h1'>{TE}</h1>
               <div id='color-picker' className="edit-tag-input">
-                <GithubPicker
+                <CompactPicker id='compact-picker'
                   color={this.state.styles.filter(ele => ele[0] === "color")[0][1]}
                   onChange={this.props.handleChange}
                 />
@@ -89,7 +89,7 @@ class EditTag extends React.Component {
                     <option value="monospace">monospace</option>
                   </select>
                 </div>
-            </div>
+              </div>
             <div  className='edit-tag-input'>
               <p>fontSize=</p><select
                 className="slider"
@@ -98,17 +98,18 @@ class EditTag extends React.Component {
                 onChange={this.props.handleFontSizeChange}
               >
                 <option value="8px">8px</option>
-                <option value="10px">10px</option>
                 <option value="12px">12px</option>
-                <option value="14px">14px</option>
                 <option value="16px">16px</option>
                 <option value="18px">18px</option>
-                <option value="20px">20px</option>
                 <option value="24px">24px</option>
+                <option value="32px">32px</option>
+                <option value="48px">48px</option>
+                <option value="72px">72px</option>
               </select>
 
             </div>
             <button id='delete-button' onClick={() => this.props.deleteTag(this.props.index)}>DELETE</button>
+            <button id='exit-button' onClick={this.props.exitEdit}>X</button>
           </div>
         );
       }
