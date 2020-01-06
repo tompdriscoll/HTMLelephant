@@ -77,7 +77,7 @@
     border:none;
 }
 
-#modal-button {
+.modal-button {
     border: none;
     padding: 4%;
     border-radius: 15px;
@@ -91,7 +91,7 @@
     transition: all .4s ease-in-out;
 }
 
-#modal-button:hover{
+.modal-button:hover{
     background: rgb(224, 147, 158);
 }
 

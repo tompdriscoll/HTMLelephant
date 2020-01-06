@@ -123,8 +123,8 @@ class LoginForm extends React.Component {
                             placeholder="Password"
                         />
                         <br />
-                        <input id='modal-button' type="submit" value="Submit" />
-                        <input  type="submit" value="Demo User" onClick={this.handleDemo}/>
+                        <input className='modal-button' type="submit" value="Submit" />
+                        <input  className='modal-button' type="submit" value="Demo User" onClick={this.handleDemo}/>
                         <div className='form-errors'>
                             {this.renderErrors()}
                         </div>
