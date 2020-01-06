@@ -59,10 +59,12 @@ class ParseHTML extends React.Component{
         let canLeft = canvas.offsetLeft - 3
         let canRight = canLeft + canvas.offsetWidth - 3
         let canTop = canvas.offsetTop
-        
+        let canBot = canTop + canvas.offsetHeight
+
         let eleLeft = elmnt.offsetLeft - pos1
         let eleTop = elmnt.offsetTop - pos2
         let eleRight = eleLeft + elmnt.offsetWidth - pos1
+        let eleBot = eleTop + elmnt.offsetHeight - pos2
 
 
         pos1 = pos3 - e.clientX;
@@ -72,7 +74,7 @@ class ParseHTML extends React.Component{
 
         // set the element's new position:
         // debugger
-        if (eleTop >= canTop)elmnt.style.top = (eleTop) + "px";
+        if (eleTop >= canTop && eleBot <= canBot)elmnt.style.top = (eleTop) + "px";
         if (eleLeft >= canLeft && eleRight <= canRight) elmnt.style.left = (eleLeft) + "px";
 
       }

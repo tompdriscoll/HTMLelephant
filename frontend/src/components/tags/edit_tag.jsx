@@ -25,7 +25,7 @@ class EditTag extends React.Component {
         return (
          <div id='edit-tag-top'> 
           <div id='edit-tag-form'>
-            <input
+            Width: <input
               type="range"
               min="100"
               max="800"
@@ -33,7 +33,7 @@ class EditTag extends React.Component {
               onChange={this.props.handleImgWidthChange}
             />
 
-            <input
+            Height: <input
               type="range"
               min="100"
               max="800"

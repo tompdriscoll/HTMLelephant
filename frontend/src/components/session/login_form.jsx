@@ -84,6 +84,7 @@ class LoginForm extends React.Component {
                         email: "guestuser@gmail.com",
                         password: "hunter2"
                     });
+                    this.props.closeModal()
                 }, 800);
             });
         }
@@ -108,19 +109,22 @@ class LoginForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="modal-form-form" id='modal-login-form'>
                         <br />
-                        <input type="text"
+                        <input id='email' type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
                         />
                         <br />
-                        <input type="password"
+                        <input
+                            id='password' 
+                            type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
                         <br />
                         <input id='modal-button' type="submit" value="Submit" />
+                        <input  type="submit" value="Demo User" onClick={this.handleDemo}/>
                         <div className='form-errors'>
                             {this.renderErrors()}
                         </div>
